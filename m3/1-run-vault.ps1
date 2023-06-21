@@ -51,7 +51,7 @@ cp $certPath/server1.pem $server1Path/vault_cert.pem
 Get-Content $certPath/ca.cert.pem >> $server1Path/vault_cert.pem
 
 
-docker run --name server1 --hostname server1 -d -v $parentPath/server1:/vault -p 8200:8200 vault:1.6.3 server
+docker run --name server1 --hostname server1 -d -v $parentPath/server1:/vault -p 8200:8200 vault:1.13.2 server
 
 # Now we'll set our environment variables
 $env:VAULT_ADDR="https://127.0.0.1:8200"
